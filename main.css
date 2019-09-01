@@ -1,0 +1,19 @@
+#card{
+  display:flex;
+  justify-content:start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 25px;
+}
+
+.card{
+  margin:10px;
+}
+
+/* #sort{
+  margin: 5px;
+} */
+
+.form-inline{
+  margin: 15px;
+}
