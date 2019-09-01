@@ -1,8 +1,11 @@
 const jumboDiv = document.getElementById('jumbo');
 const formDiv = document.getElementById('form');
 const cardDiv = document.getElementById('card');
-const makeMagicBtn = document.getElementById('btn1');
-const sortBtn = document.getElementById('btn2');
+const makeMagicBtn = document.getElementById('makeMagic');
+const sortBtn = document.getElementById('sort');
+const expelStudent = document.getElementById('excel');
+
+
 
 const PTD = (stringToPrint,divId) => {
   const selectedDiv = document.getElementById(divId);
@@ -17,11 +20,10 @@ const makeJumbo = () => {
   <p class="lead"> Calling All Wizards</p>
   <hr class="my-4">
   <p>Let your training Begin...</p>
-  <a  id='btn1'class="btn btn-success btn-lg" href="#" role="button">Make Magic</a>
+  <a  id='makeMagic'class="btn btn-success btn-lg" href="#" role="button">Make Magic</a>
 </div>`;
 PTD(JumboString,'jumbo');
 }
-
 
 
 const makeForm = () => {
@@ -30,38 +32,45 @@ const makeForm = () => {
     <div class="form-group mb-2">
       <input type="text" readonly class="form-control-plaintext" id="name" value="Enter Your Name">
     </div>
-    <div class="form-group mx-sm-5 mb-2">
-      <input type="text" class="form-control" id="nameInputBox">
+    <div>
+      <input type="text" id="nameInputBox">
     </div>
-    <button type="" id="sort" class="btn btn-primary mb-2">Sort</button>
+    <button type="submit" id="sort" class="btn btn-primary mb-2">Sort</button>
   </form>`;
   PTD(formString,'form')
   $("#nameInputBox").focus();
+  studentBtnEvent();
 };
 
 
 
 const makeCard = () => {
-    const formPrint = ` <div class="card bg-light mb-10" style="max-width: 18rem;">
+  const studentName = nameInputBox.value;
+    let randomHouse = houses[Math.floor(Math.random() *houses.length)];
+    let cardPrint = `<div class="card" style="width: 18rem;">
     <div class="card-header text-center">Welcome to Hogwarts!</div>
     <div class="card-body text-center">
-      <h1 class="card-title text-center">test</h1>
+      <h1 class="studentName text-center">${studentName}</h1>
       <form>
           <div class="form-group">
             <label for="formGroupExampleInput"></label>
-            <input type="text" class="form-control" id="formInput" placeholder="">
+            <h2 type="text"  id="house">${randomHouse}</h2>
           </div>
         </form>
-      <p class="card-text">Keeping Going</p>
-      <button id="btn2" class="btn btn-primary btn-lg">Click Me 2 Please </button>
+      <button type="submit" id="excel" class="btn btn-danger btn-lg">Expel</button>
       </div>
   </div>`;
-  PTD(formPrint,'card');
-  $("#formInput").focus();
+  PTD(cardPrint,'card');
+
 };
 
 const makeMagicBtnEvent = () => {
   makeJumbo();
-  $('#btn1').on('click',makeForm);
-}
+  $('#makeMagic').on('click',makeForm);
+};
 makeMagicBtnEvent();
+
+
+const studentBtnEvent = (event) => {
+  $('#sort').on('click', makeCard); 
+}
