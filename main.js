@@ -21,13 +21,27 @@ const makeJumbo = () => {
 </div>`;
 PTD(JumboString,'jumbo');
 }
-makeJumbo();
-
-
 
 
 
 const makeForm = () => {
+  const formString =`
+<form class="form-inline">
+    <div class="form-group mb-2">
+      <input type="text" readonly class="form-control-plaintext" id="name" value="Enter Your Name">
+    </div>
+    <div class="form-group mx-sm-5 mb-2">
+      <input type="text" class="form-control" id="nameInputBox">
+    </div>
+    <button type="" id="sort" class="btn btn-primary mb-2">Sort</button>
+  </form>`;
+  PTD(formString,'form')
+  $("#nameInputBox").focus();
+};
+
+
+
+const makeCard = () => {
     const formPrint = ` <div class="card bg-light mb-10" style="max-width: 18rem;">
     <div class="card-header text-center">Welcome to Hogwarts!</div>
     <div class="card-body text-center">
@@ -47,6 +61,7 @@ const makeForm = () => {
 };
 
 const makeMagicBtnEvent = () => {
+  makeJumbo();
   $('#btn1').on('click',makeForm);
 }
 makeMagicBtnEvent();
