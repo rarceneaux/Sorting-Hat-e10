@@ -10,9 +10,12 @@
   margin:10px;
 }
 
-/* #sort{
+#sort{
   margin: 5px;
-} */
+  background-color: red;
+  border: 1px solid blue;
+  color:blue;
+}
 
 .form-inline{
   margin: 15px;
