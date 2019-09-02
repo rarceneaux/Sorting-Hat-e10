@@ -15,10 +15,10 @@ const houses = ['Gryffindor','Hufflepuff','Ravenclaw','Slyther'];
 // Make Jumbo runs on page load
 const makeJumbo = () => {
   const JumboString =`<div class="jumbotron">
-  <h1 class="display-4">Sorting Hat</h1>
-  <p class="lead"> Calling All Wizards</p>
+  <h1 class="display-4">Sorting 🎩Hat</h1>
+  <h2 > Calling All Wizards</h2>
   <hr class="my-4">
-  <p>Let your training Begin...</p>
+  <p>Let Your Training Begin....</p>
   <a  id='makeMagic'class="btn btn-success btn-lg" href="#" role="button">Make Magic</a>
 </div>`;
 PTD(JumboString,'jumbo');
@@ -30,12 +30,12 @@ const makeForm = () => {
   let formString =`
 <form class="form-inline">
     <div class="form-group mb-2">
-      <input type="text" readonly class="form-control-plaintext" id="name" value="Enter Your Name">
+      <input type="text" readonly class="form-control-plaintext" id="name" value="Enter First Year's Name">
     </div>
     <div>
       <input type="text" id="nameInputBox">
     </div>
-    <button type="submit" id="sort" class="btn btn-primary mb-2">Sort</button>
+    <button type="submit" id="sort" class="btn btn-success mb-2">Sort</button>
   </form>`;
   PTD(formString,'form')
   $("#nameInputBox").focus();
@@ -47,7 +47,7 @@ const makeForm = () => {
 const makeCard = () => {
   const studentName = nameInputBox.value;
     let randomHouse = houses[Math.floor(Math.random() *houses.length)];
-    let cardPrint = `<div class="card" style="width: 18rem;">
+    let cardPrint = `<div class="card" style="width: 20rem;">
     <div class="card-header text-center">Welcome to Hogwarts!</div>
     <div class="card-body text-center">
     <form>

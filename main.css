@@ -10,11 +10,15 @@
   margin:10px;
 }
 
+.card-body{
+  background-color: lightgrey;
+}
+
+
 #sort{
   margin: 5px;
-  background-color: red;
-  border: 1px solid blue;
-  color:blue;
+  
+  
 }
 
 .form-inline{
@@ -25,4 +29,19 @@
   /* border: 5px solid black; */
   width: 99%;
   height: 99%;
+}
+
+#nameInputBox{
+  background-color: lightgray;
+  margin: 25px
+}
+
+.expel{
+  background-color: red;
+  border-radius: 25px;
+  color:white;
+}
+
+#name{
+  margin: 20px;
 }
