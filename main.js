@@ -13,7 +13,7 @@ const PTD = (stringToPrint,divId) => {
 const houses = ['Gryffindor','Hufflepuff','Ravenclaw','Slyther'];
 
 // Make Jumbo runs on page load
-const makeJumbo = () => {
+const makeJumbo = (e) => {
   const JumboString =`<div class="jumbotron">
   <h1 class="display-4">Sorting 🎩Hat</h1>
   <h2 > Calling All Wizards</h2>
@@ -26,10 +26,10 @@ PTD(JumboString,'jumbo');
 makeJumbo();
 
 // Being called on line 71
-const makeForm = () => {
+const makeForm = (e) => {
   let formString =`
 <form class="form-inline">
-    <div class="form-group mb-2">
+    <div class="">
       <input type="text" readonly class="form-control-plaintext" id="name" value="Enter First Year's Name">
     </div>
     <div>
@@ -39,7 +39,9 @@ const makeForm = () => {
   </form>`;
   PTD(formString,'form')
   $("#nameInputBox").focus();
+  
   studentBtnEvent();
+  
  };
 
 
@@ -66,9 +68,9 @@ const makeCard = () => {
 
 
 // Calling after Jumbo and make magic is created in Make Jumbo FN
-const makeMagicBtnEvent = () => {
-  $('#makeMagic').on('click',makeForm); 
-};
+const makeMagicBtnEvent = (e) => {
+  $('#makeMagic').on('click',makeForm);
+}
 makeMagicBtnEvent();
 
 // Called @ Line 39 Make Form FN
