@@ -3,7 +3,7 @@ const formDiv = document.getElementById('form');
 const cardDiv = document.getElementById('card');
 const makeMagicBtn = document.getElementById('makeMagic');
 const sortBtn = document.getElementById('sort');
-// const InputBox = document.getElementById('nameInputBox');
+
 
 
 
@@ -32,6 +32,7 @@ makeJumbo();
 
 // Being called on line 71
 const makeForm = (e) => {
+  $("#form").empty();
   let formString =`
 <form class="form-inline">
     <div class="">
@@ -66,9 +67,13 @@ const makeCard = () => {
       </div>
   </div>`;
   PTD(cardPrint,'card');
-  // Line 65 disabledsnameInputBox
-  $('#sort').attr('disabled',true);
   removeCard();
+  $('#sort').attr('disabled',true);
+  if (studentName === '') {
+    alert('Please Enter Student Name')
+  } else {
+    
+  }
 };
 
 
@@ -80,8 +85,11 @@ makeMagicBtnEvent();
 
 // Called @ Line 39 Make Form FN
 const studentBtnEvent = () => {
-  $('#sort').on('click', makeCard);
-  $("#nameInputBox").empty();
+  $('#sort').on('click', function (e){
+    e.preventDefault();
+    makeCard();
+    $("#nameInputBox").empty();
+  })
 };
 
 // Calling on line 62 in Make Card FN
