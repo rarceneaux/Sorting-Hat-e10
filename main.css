@@ -3,26 +3,50 @@
   justify-content:start;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 25px;
+  margin: 20px;
 }
 
 .card{
   margin:10px;
 }
 
+.card-body{
+  background-color: lightgrey;
+}
+
+
 #sort{
   margin: 5px;
-  background-color: red;
-  border: 1px solid blue;
-  color:blue;
+  
+  
 }
 
 .form-inline{
   margin: 15px;
+
 }
 
 #form{
-  /* border: 5px solid black; */
-  width: 99%;
-  height: 99%;
+  /* border: 5px solid black;   */
+  /* width: 99%;
+  height: 99%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#nameInputBox{
+  background-color: lightgray;
+  margin: 25px
+}
+
+.expel{
+  background-color: red;
+  border-radius: 25px;
+  color:white;
+}
+
+#name{
+  margin: 20px;
+  font-weight: bolder
 }
