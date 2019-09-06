@@ -39,10 +39,8 @@ const makeForm = (e) => {
   </form>`;
   PTD(formString,'form')
   $("#nameInputBox").focus();
-  
   studentBtnEvent();
-  
- };
+};
 
 
 //  Being Called on Line 75
@@ -70,7 +68,8 @@ const makeCard = () => {
 // Calling after Jumbo and make magic is created in Make Jumbo FN
 const makeMagicBtnEvent = (e) => {
   $('#makeMagic').on('click',makeForm);
-}
+  // $('#makeMagic').off();
+};
 makeMagicBtnEvent();
 
 // Called @ Line 39 Make Form FN
