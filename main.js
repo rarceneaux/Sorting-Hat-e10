@@ -3,7 +3,7 @@ const formDiv = document.getElementById('form');
 const cardDiv = document.getElementById('card');
 const makeMagicBtn = document.getElementById('makeMagic');
 const sortBtn = document.getElementById('sort');
-
+const inputBox = document.getElementById('nameInputBox');
 
 
 
@@ -38,10 +38,10 @@ const makeForm = (e) => {
     <div class="">
       <input type="text" readonly class="form-control-plaintext" id="name" value="Enter First Year's Name">
     </div>
-    <div>
-      <input type="text" id="nameInputBox">
+    <div id="inputDiv">
+      <input type="text" id="nameInputBox" placeholder="Harry Potter">
     </div>
-    <button type="submit" id="sort" class="btn btn-success mb-2">Sort</button>
+    <button  id="sort" class="btn btn-success mb-2">Sort</button>
   </form>`;
   PTD(formString,'form')
   $("#nameInputBox").focus();
@@ -50,7 +50,7 @@ const makeForm = (e) => {
 
 
 //  Being Called on Line 75
-const makeCard = () => {
+const makeCard = (e) => {
   const studentName = nameInputBox.value;
     let randomHouse = houses[Math.floor(Math.random() *houses.length)];
     let cardPrint = `<div class="card" style="width: 20rem;">
@@ -68,12 +68,8 @@ const makeCard = () => {
   </div>`;
   PTD(cardPrint,'card');
   removeCard();
-  $('#sort').attr('disabled',true);
-  if (studentName === '') {
-    alert('Please Enter Student Name')
-  } else {
-    
-  }
+$('#sort').attr('disabled',true);
+nameInputBox.value = '';
 };
 
 
@@ -88,9 +84,9 @@ const studentBtnEvent = () => {
   $('#sort').on('click', function (e){
     e.preventDefault();
     makeCard();
-    $("#nameInputBox").empty();
-  })
+})
 };
+
 
 // Calling on line 62 in Make Card FN
 const removeCard = () =>{
@@ -110,6 +106,3 @@ const expelStudent = () => {
   }
   expelStudent();
 
-
-// After Make Magic Btn is Click I want to either disable it from being clicked again or is this a good case of prevent default so another form box does not print to the DOM
-// After user types in their name and clicks the sort btn I want to disbale (sort btn) which is working however I want the text recently typed and makes a card make the text (empty in the input box) either by 1 event I have not indentified yet or if Make Magic is hit afterwards to refrest and give new form
