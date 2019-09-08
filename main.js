@@ -44,8 +44,8 @@ const makeForm = (e) => {
     <button  id="sort" class="btn btn-success mb-2">Sort</button>
   </form>`;
   PTD(formString,'form')
-  $("#nameInputBox").focus();
-  studentBtnEvent();
+document.getElementById('nameInputBox').focus();
+studentBtnEvent();
 };
 
 
@@ -75,18 +75,17 @@ nameInputBox.value = '';
 
 // Calling after Jumbo and make magic is created in Make Jumbo FN
 const makeMagicBtnEvent = (e) => {
-  $('#makeMagic').on('click',makeForm);
+document.getElementById('makeMagic').addEventListener('click',makeForm);
 } 
 makeMagicBtnEvent();
 
 // Called @ Line 39 Make Form FN
 const studentBtnEvent = () => {
-  $('#sort').on('click', function (e){
-    e.preventDefault();
-    makeCard();
-})
+document.getElementById('sort').addEventListener('click', function (e){
+e.preventDefault();
+makeCard();
+  })
 };
-
 
 // Calling on line 62 in Make Card FN
 const removeCard = () =>{
@@ -102,7 +101,7 @@ const removeCard = () =>{
 }
 //expelStudent Event Listener
 const expelStudent = () => {
-  $(".expel").on('click', removeCard);
+document.getElementsByClassName('expel').addEventListener('click',removeCard)
   }
   expelStudent();
 
