@@ -32,19 +32,19 @@ makeJumbo();
 
 // Being called on line 71
 const makeForm = (e) => {
-  $("#form").empty();
+  document.getElementById('form').innerHTML = '';
   let formString =`
 <form class="form-inline">
     <div class="">
       <input type="text" readonly class="form-control-plaintext" id="name" value="Enter First Year's Name">
     </div>
     <div id="inputDiv">
-      <input type="text" id="nameInputBox" placeholder="Harry Potter">
+      <input type="text" id="nameInputBox" placeholder="Harry Potter" required="">
     </div>
     <button  id="sort" class="btn btn-success mb-2">Sort</button>
   </form>`;
   PTD(formString,'form')
-document.getElementById('nameInputBox').focus();
+document.getElementById('nameInputBox') .focus();
 studentBtnEvent();
 };
 
@@ -99,9 +99,4 @@ const removeCard = () =>{
     })
   }
 }
-//expelStudent Event Listener
-const expelStudent = () => {
-document.getElementsByClassName('expel').addEventListener('click',removeCard)
-  }
-  expelStudent();
 
