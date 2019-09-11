@@ -6,9 +6,6 @@ const sortBtn = document.getElementById('sort');
 const inputBox = document.getElementById('nameInputBox');
 
 
-
-
-
 // Print to DOM
 const PTD = (stringToPrint,divId) => {
   const selectedDiv = document.getElementById(divId);
@@ -98,5 +95,5 @@ const removeCard = () =>{
       cardToRemove.remove();
     })
   }
-}
+};
 
