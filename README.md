@@ -5,7 +5,7 @@
 Use this application to add an student to the School of Hogwarts and assign them to a randomly picked house.
  
 ## Screenshot
-![](screenshot/Sorting-Hat.png)
+![](https://raw.githubusercontent.com/rarceneaux/Sorting-Hat-e10/master/screenshot/Sorting-Hat.png)
  
  
 ## How to Run:
