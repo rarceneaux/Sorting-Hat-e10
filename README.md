@@ -1,2 +1,16 @@
 # Sorting Hat
-To start off with, you will use a bootstrap jumbotron to have your sorting hat introduce itself and start the sorting process (by clicking on a button). A bootstrap form will then appear to fill in the student's name and a button to sort. This should then assign the student to a random house (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin). On sorting a student, the form should clear and a bootstrap card with the student's name and house should print below the form. You should also be able to expel a student after they have been sorted, which should remove their card from the student record.
+ 
+## Description
+ 
+Use this application to add an student to the School of Hogwarts and assign them to a randomly picked house.
+ 
+## Screenshot
+![](screenshot/Sorting-Hat.png)
+ 
+ 
+## How to Run:
+  * Clone this project
+  * Install [http-server] (https://www.npmjs.com/package/http-server) from npm
+  * At the root of this project run the following command: `hs -p 8888`
+  * In your browser navigate to `https://localhost:8888`
+
