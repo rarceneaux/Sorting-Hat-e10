@@ -5,6 +5,7 @@ const makeMagicBtn = document.getElementById('makeMagic');
 const sortBtn = document.getElementById('sort');
 const inputBox = document.getElementById('nameInputBox');
 
+let amazonLogo = 'amazon-logo.png';
 
 // Print to DOM
 const PTD = (stringToPrint,divId) => {
@@ -12,16 +13,16 @@ const PTD = (stringToPrint,divId) => {
   selectedDiv.innerHTML += stringToPrint;
 }
 // House Array
-const houses = ['Gryffindor','Hufflepuff','Ravenclaw','Slyther'];
+const houses = ['AMAZON','GOOGLE','TIK TOK','YOUTUBE','APPLE'];
 
 // Make Jumbo runs on page load
 const makeJumbo = (e) => {
   const JumboString =`<div class="jumbotron">
-  <h1 class="display-4">Sorting 🎩Hat</h1>
-  <h2 > Calling All Wizards</h2>
+  <h1 class="display-4">Future Software Developers 💻</h1>
+  <h2 >   </h2>
   <hr class="my-4">
-  <p>Let Your Training Begin....</p>
-  <a  id='makeMagic'class="btn btn-success btn-lg" role="button">Make Magic</a>
+  <H1>What Tech company will hire you....</H1>
+  <a  id='makeMagic'class="btn btn-success btn-lg" role="button">Let's Find Out</a>
 </div>`;
 PTD(JumboString,'jumbo');
 }
@@ -33,16 +34,17 @@ const makeForm = (e) => {
   let formString =`
 <form class="form-inline">
     <div class="">
-      <input type="text" readonly class="form-control-plaintext" id="name" value="Enter First Year's Name">
+      <input type="text" readonly class="form-control-plaintext" id="name" value="Enter Your Name">
     </div>
     <div id="inputDiv">
-      <input type="text" id="nameInputBox" placeholder="Harry Potter" required="">
+      <input type="text" id="nameInputBox" placeholder="Name" required="">
     </div>
-    <button  id="sort" class="btn btn-success mb-2">Sort</button>
+    <button  id="sort" class="btn btn-success mb-2">PLAY</button>
   </form>`;
   PTD(formString,'form')
 document.getElementById('nameInputBox') .focus();
 studentBtnEvent();
+$('#form').show();
 };
 
 
@@ -51,16 +53,17 @@ const makeCard = (e) => {
   const studentName = nameInputBox.value;
     let randomHouse = houses[Math.floor(Math.random() *houses.length)];
     let cardPrint = `<div class="card" style="width: 20rem;">
-    <div class="card-header text-center">Welcome to Hogwarts!</div>
+    <h1 class="card-header text-center">Welcome to ${randomHouse}</h1>
     <div class="card-body text-center">
     <form>
       <h1 class="studentName text-center">${studentName}</h1>
           <div class="form-group">
             <label for="formGroupExampleInput"></label>
-            <h2 type="text"  id="house">${randomHouse}</h2>
+            <h2 type="text"  id="house">🎉🎉🎉</h2>
+
           </div>
         </form>
-      <button  type="submit" class="expel">Expel</button>
+      <button  type="submit" class="expel">Delete</button>
       </div>
   </div>`;
   PTD(cardPrint,'card');
@@ -80,6 +83,7 @@ makeMagicBtnEvent();
 const studentBtnEvent = () => {
 document.getElementById('sort').addEventListener('click', function (e){
 e.preventDefault();
+$('#form').hide();
 makeCard();
   })
 };

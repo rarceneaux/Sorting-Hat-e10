@@ -11,12 +11,20 @@
 }
 
 .card-body{
-  background-color: lightgrey;
+  background-color: dodgerblue;
 }
 
 
-#sort{
+#sort:hover{
   margin: 5px;
+  background-color: yellow;
+  color: red;
+}
+
+#makeMagic{
+  background-color: yellow;
+  color: red;
+  font-weight: bolder;
 }
 
 .form-inline{
@@ -25,17 +33,21 @@
 }
 
 #form{
-  /* border: 5px solid black;   */
-  /* width: 99%;
-  height: 99%; */
+  /* border: 5px solid black;   */  
+  height: 99%; 
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* background-image: url('https://image.shutterstock.com/image-vector/kids-learning-coding-programming-online-260nw-1777292972.jpg'); */
 }
 
 #nameInputBox{
-  background-color: lightgray;
-  margin: 25px
+  background-color: red;
+  margin: 25px;
+  color:yellow;
+  font-weight: bolder;
+  height: 50PX;
+  width: 350PX;
 }
 
 .expel{
@@ -46,5 +58,29 @@
 
 #name{
   margin: 20px;
-  font-weight: bolder
+  font-weight: bolder;
+  color:yellow;
+  font-size: x-large;
+  font-weight: bolder;
+  font: xx-large;
+}
+
+body{
+/* background-color: dodgerblue; */
+/* background-image: url('https://image.shutterstock.com/image-vector/kids-learning-coding-programming-online-260nw-1777292972.jpg'); */
+background-image: url('https://firebasestorage.googleapis.com/v0/b/hustleup-7ae5a.appspot.com/o/GAME.png?alt=media&token=6ab49cd4-b56b-4777-b757-5a81522d233f');
+}
+
+.jumbotron{
+  background-color: dodgerblue;
+  
+}
+
+.display-4{
+  color: red;
+  font-weight: bolder;
+}
+
+p{
+  color: greenyellow;
 }
